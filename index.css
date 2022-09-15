@@ -1,0 +1,76 @@
+.wrapper{
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(5, 20vw);
+grid-gap: 15px;
+border: 3px solid transparent rgb(226, 160, 160);
+border-radius: 50px;
+list-style: none;
+margin-left: auto;
+margin-right: auto;
+margin-top:2vh;
+margin-bottom: auto;
+background-color: rgb(247, 247, 234);
+}
+.title{
+    margin-top:5vh;
+    text-align: center;
+}
+.img{
+    max-width: 70%;
+    height:auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
+}
+.card-item{
+    border-color: grey;
+    border: 1px rgb(196, 190, 190);
+    border-radius: 50px;
+    background-color: beige;
+    box-shadow:1px 3px grey;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+.card-item:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+#nameInput{
+background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+background-color: rgb(236, 232, 234);
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 20%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px #ddd; /* Add a grey border */
+  margin-top:5vh;
+  margin-bottom: auto;
+  margin-left:35vh;
+  margin-right:12vh;
+  border-radius: 15px;
+
+}
+
+#numberInput{
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-color: rgb(236, 232, 234);
+      background-position: 10px 12px; /* Position the search icon */
+      background-repeat: no-repeat; /* Do not repeat the icon image */
+      width: 20%; /* Full-width */
+      font-size: 16px; /* Increase font-size */
+      padding: 12px 20px 12px 40px; /* Add some padding */
+      border: 1px #ddd; /* Add a grey border */
+      margin-top:5vh;
+      margin-bottom: auto;
+      margin-left:5vh;
+      margin-right:10vh;
+      border-radius: 15px;
+    
+    }
