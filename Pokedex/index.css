@@ -8,7 +8,7 @@ border-radius: 50px;
 list-style: none;
 margin-left: auto;
 margin-right: auto;
-margin-top:2vh;
+margin-top:5vh;
 margin-bottom: auto;
 background-color: rgb(247, 247, 234);
 }
@@ -19,8 +19,8 @@ background-color: rgb(247, 247, 234);
 .img{
     max-width: 70%;
     height:auto;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin-top: 3vh;
+    margin-bottom: auto;
 
 }
 .card-item{
@@ -29,10 +29,10 @@ background-color: rgb(247, 247, 234);
     border-radius: 50px;
     background-color: beige;
     box-shadow:1px 3px grey;
-    margin-left: auto;
+    margin-left: 4vh;
     margin-right: auto;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-top: auto;
+    margin-bottom: 2vh;
     text-align: center;
 }
 
