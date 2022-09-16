@@ -1,60 +1,61 @@
 .wrapper{
 display: grid;
-grid-template-columns: repeat(4, 1fr);
+grid-template-columns: repeat(5, 30vh);
 grid-template-rows: repeat(5, 20vw);
-grid-gap: 15px;
-border: 3px solid transparent rgb(226, 160, 160);
-border-radius: 50px;
 list-style: none;
-margin-left: auto;
-margin-right: auto;
-margin-top:5vh;
-margin-bottom: auto;
-background-color: rgb(247, 247, 234);
+justify-content: center;
+}
+.background-wrapper{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100%;
+    width: 100%;
 }
 .title{
     margin-top:5vh;
     text-align: center;
+    font-family: Rockwell, sans;
+    font-size: 50px;
+    color: purple;
 }
 .img{
     max-width: 70%;
     height:auto;
-    margin-top: 3vh;
+    margin-top: 5vh;
     margin-bottom: auto;
 
 }
 .card-item{
-    border-color: grey;
-    border: 1px rgb(196, 190, 190);
+    border-color: rgba(0, 0, 0, 0.2);
     border-radius: 50px;
-    background-color: beige;
-    box-shadow:1px 3px grey;
-    margin-left: 4vh;
+    background-color: rgb(255, 255, 135);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+    margin-left: 2vh;
     margin-right: auto;
-    margin-top: auto;
+    margin-top: 2vh;
     margin-bottom: 2vh;
     text-align: center;
+    transition: all .2s ease-in-out; 
 }
 
 .card-item:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(221, 211, 211, 0.2);
     cursor: pointer;
+    transform: scale(1.15);
 }
 
 #nameInput{
-background-image: url('/css/searchicon.png'); /* Add a search icon to input */
 background-color: rgb(236, 232, 234);
-  background-position: 10px 12px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 20%; /* Full-width */
-  font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
-  border: 1px #ddd; /* Add a grey border */
-  margin-top:5vh;
-  margin-bottom: auto;
-  margin-left:35vh;
-  margin-right:12vh;
-  border-radius: 15px;
+width: 20%; /* Full-width */
+font-size: 16px; /* Increase font-size */
+padding: 12px 20px 12px 40px; /* Add some padding */
+border: 1px #ddd; /* Add a grey border */
+margin-top:5vh;
+margin-bottom: auto;
+margin-left:34vh;
+margin-right:12vh;
+border-radius: 15px;
 
 }
 
