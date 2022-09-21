@@ -125,10 +125,11 @@ nameFilter = (input) =>{
     if(!input == null || !input == "" && nameCheck(input)){ 
         pokemon.forEach(e=>{
             if(e.name.includes(input.toLowerCase()) && pokemonSearchLetter.length < 5 ){
-            pokemonSearchLetter.push("NUMBER:"+e.id + " NAME:"+ e.name+ " ABILITIES: " +e.type+ '');
+            pokemonSearchLetter.push("|NUMBER:"+e.id + " NAME:"+ e.name.toUpperCase()+ " ABILITIES: " +e.type.toUpperCase()+ '|\n');
         }
     })
-    alert(pokemonSearchLetter)
+    alert(pokemonSearchLetter.toString())
+    pokemonSearchLetter.splice(0,pokemonSearchLetter.length)
 }
 }
 
@@ -158,16 +159,17 @@ numberFilter = (input) =>{
     if(!input == null || !input == "" && numberCheck(input)){
     pokemon.forEach(e => {
         if(((e.id.includes(input.toLowerCase())) && pokemonSearchNumber.length<5)){
-            pokemonSearchNumber.push("NUMBER:"+e.id + " NAME:"+ e.name+ " ABILITIES: " +e.type);
+            pokemonSearchNumber.push("|NUMBER: "+e.id + " NAME: "+ e.name.toUpperCase() + " ABILITIES: " +e.type.toUpperCase() + "|\n" );
         }
     })
-    alert(pokemonSearchNumber)
+    alert(pokemonSearchNumber.toString());
+    pokemonSearchNumber.splice(0,pokemonSearchNumber.length)
 }
 }
 
 //Function to check if input is only numbers between 1-20
 function numberCheck(cond){
-        if(cond > 1 && cond < 20){
+        if(cond => 1 && cond <= 20){
             return true;
         }
         else{
