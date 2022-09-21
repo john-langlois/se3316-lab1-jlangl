@@ -122,18 +122,25 @@ function nameEnter(event) {
 
 //filter through pokemon info, if found, return boolean
 nameFilter = (input) =>{
-    if(!input == null || !input == ""){
-    pokemon.forEach(e => {
-        if(((e.name.includes(input.toLowerCase())) && pokemonSearchLetter.length<5)){
+    if(!input == null || !input == "" && nameCheck(input)){ 
+        pokemon.forEach(e=>{
+            if(e.name.includes(input.toLowerCase()) && pokemonSearchLetter.length < 5 ){
             pokemonSearchLetter.push("NUMBER:"+e.id + " NAME:"+ e.name+ " ABILITIES: " +e.type+ '');
         }
     })
     alert(pokemonSearchLetter)
-    pokemonSearchLetter.splice(0,pokemonSearchLetter.length)
 }
-    else{
-        console.log("Enter a valid search")
-    } 
+}
+
+//Function to check if input is only characters from A-Z
+function nameCheck(cond){
+    var allowedLetters = /^[A-Za-z]+$/;
+        if(cond.match(allowedLetters)){
+            return true;
+        }
+        else{
+            alert("Please enter only characters from a-z")
+        }
 }
 
 
@@ -148,16 +155,22 @@ function numberEnter(event) {
 
 //filter through pokemon info, if found, return boolean
 numberFilter = (input) =>{
-    if(!input == null || !input == ""){
+    if(!input == null || !input == "" && numberCheck(input)){
     pokemon.forEach(e => {
         if(((e.id.includes(input.toLowerCase())) && pokemonSearchNumber.length<5)){
             pokemonSearchNumber.push("NUMBER:"+e.id + " NAME:"+ e.name+ " ABILITIES: " +e.type);
         }
     })
     alert(pokemonSearchNumber)
-    pokemonSearchNumber.splice(0,pokemonSearchNumber.length)
 }
-    else{
-        console.log("Enter a valid search")
-    } 
+}
+
+//Function to check if input is only numbers between 1-20
+function numberCheck(cond){
+        if(cond > 1 && cond < 20){
+            return true;
+        }
+        else{
+            alert("Please enter only numbers from 1-20")
+        }
 }
