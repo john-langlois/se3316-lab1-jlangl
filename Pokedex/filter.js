@@ -135,7 +135,7 @@ nameFilter = (input) =>{
 
 //Function to check if input is only characters from A-Z
 function nameCheck(cond){
-    var allowedLetters = /^[A-Za-z]+$/;
+    let allowedLetters = /^[A-Za-z]+$/;
         if(cond.match(allowedLetters)){
             return true;
         }
@@ -143,8 +143,6 @@ function nameCheck(cond){
             alert("Please enter only characters from a-z")
         }
 }
-
-
 //Number Functionality
 //On enter event
 function numberEnter(event) {
