@@ -26,11 +26,6 @@ body{
 .container{
    justify-items: center;
 }
-.nav{
-    border-radius:20px;
-    height:10vw;
-    width:100%;
-}
 .grid{
     margin:3vw;
     display:grid;
