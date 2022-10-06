@@ -134,6 +134,7 @@ numberInput.addEventListener("keyup",numberEnter);
 //Letter functionality
 //On enter event
 function nameEnter() {
+pokemonSearch = []
     let child = searchResult.lastElementChild;
   while (child) {
     searchResult.removeChild(child);
@@ -145,16 +146,22 @@ function nameEnter() {
 }
 //filter through pokemon info, if found, return boolean
 nameFilter = (input) =>{
+    pokemonSearch = []
+    let child = searchResult.lastElementChild;
+  while (child) {
+    searchResult.removeChild(child);
+    child = searchResult.lastElementChild;
+  }
     if(!input == null || !input == "" && nameCheck(input)){ 
-        pokemon.forEach(names=>{
-            for(let value in names){
-                if(value.name.includes(input.toLowerCase()) && pokemonSearch.length < 10 ){
-                    pokemonSearch.push(names[value])
-        }
-    }
-    })
-    console.log(pokemonSearch)
-    pokemonSearch.splice(0,pokemonSearch.length)
+        pokemon.forEach(e => {
+            if(((e.name.includes(input.toLowerCase())) && pokemonSearch.length<5)){
+                let typeArr = e.type.split(',')
+                pokemonSearch.push([e.name,e.id,e.src,typeArr[0],typeArr[1]])
+            }
+        })
+        pokemonSearch.forEach(e=>{
+            cardDisplay(e)
+        })
 }
 }
 //Function to check if input is only characters from A-Z
@@ -172,25 +179,28 @@ function nameCheck(cond){
 //Number Functionality
 //On enter event
 function numberEnter() {
-    if(!numberInput.value == ""){
         numberFilter(numberInput.value);
-    }
 }
 
 //filter through pokemon info, if found, return boolean
 numberFilter = (input) =>{
+pokemonSearch = []
+    let child = searchResult.lastElementChild;
+  while (child) {
+    searchResult.removeChild(child);
+    child = searchResult.lastElementChild;
+  }
+    
     if(!input == null || !input == "" && numberCheck(input)){
     pokemon.forEach(e => {
         if(((e.id.includes(input.toLowerCase())) && pokemonSearch.length<5)){
             let typeArr = e.type.split(',')
-            console.log(typeArr)
-            cardDisplay(e.src,e.name,e.id,typeArr[0],typeArr[1])
-            
+            pokemonSearch.push([e.name,e.id,e.src,typeArr[0],typeArr[1]])
         }
     })
-
-    console.log(pokemonSearch)
-    pokemonSearch.splice(0,pokemonSearch.length)
+    pokemonSearch.forEach(e=>{
+        cardDisplay(e)
+    })
 }
 }
 
@@ -207,7 +217,7 @@ function numberCheck(cond){
 
 
 //creating each component that makes up the card component 
-function cardDisplay(img_src, pokemon_name, pokemon_id, type1, type2){
+function cardDisplay(arr){
         var card = document.createElement("li");
         card.id = 'dynamic-ul'
         let card_article =  document.createElement("article")
@@ -216,7 +226,7 @@ function cardDisplay(img_src, pokemon_name, pokemon_id, type1, type2){
         card_article.classList.add('bg-search')
 
         let card_image = document.createElement("img")
-        card_image.src = img_src
+        card_image.src = arr[2]
         card_image.alt = ""
         card_article.appendChild(card_image)
 
@@ -224,11 +234,14 @@ function cardDisplay(img_src, pokemon_name, pokemon_id, type1, type2){
         let text_title = document.createElement("h3")
         let text_id = document.createElement("h2")
         let btn1 = document.createElement("btn")
-        let btn2 = document.createElement("btn")
+        
 
         card_text.classList.add('text')
-        btn1.classList.add(type1)
-        btn2.classList.add(type2)
+        btn1.classList.add(arr[3],"search-button")
+
+        let btn2 = document.createElement("btn")
+        btn2.classList.add(arr[4],"search-button")
+        
     
         card_article.appendChild(card_text)
         card_text.appendChild(text_title)
@@ -236,12 +249,11 @@ function cardDisplay(img_src, pokemon_name, pokemon_id, type1, type2){
         card_text.appendChild(btn1)
         card_text.appendChild(btn2)
 
-        
+    
+        text_title.innerText = arr[0]
+        text_id.innerText = arr[1]
+        btn1.innerText = arr[3]
+        btn2.innerText = arr[4]
 
-        text_title.innerText = pokemon_name
-        text_id.innerText = pokemon_id
-        btn1.innerText = type1
-        btn2.innerText = type2
-
-        document.getElementById("search-results").appendChild(card)
+        searchResult.appendChild(card)
 }

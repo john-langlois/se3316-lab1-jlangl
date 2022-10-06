@@ -81,8 +81,21 @@ form{
     padding:10px;
     width:50%;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 20px;
     color:rgb(114, 114, 114);
+}
+
+.search-button{
+    display: inline-block;
+    margin: 5px;
+    border-radius: 20px;
+    border: none;
+    padding:10px;
+    width:50%;
+    font-weight: 600;
+    font-size: 20px;
+    color:rgb(114, 114, 114);
+    text-transform: capitalize;
 }
 .grass{
     background-color:#3fd088;
@@ -107,7 +120,7 @@ form{
 }
 
 .bg-search{
-    background:#ffc6fa;
+    background:#f7fbab;
     border:none;
     box-shadow: 2px 2px 16px 0px rgba(0,0,0,0.3);
     border-radius:20px;
