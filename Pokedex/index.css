@@ -9,7 +9,6 @@
     );  
     animation: AnimateBG 20s ease infinite;
   }
-  
   @keyframes AnimateBG { 
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
@@ -49,7 +48,7 @@ body{
 
 .grid > li:hover{
     transform:scale(1.1);
-    box-shadow: 2px 2px 56px 0px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 56px 0px rgba(0,0,0,0.4);
     cursor:pointer;
 }
 

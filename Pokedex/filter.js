@@ -167,7 +167,6 @@ function nameCheck(cond){
             nameInput.value = "";
         }
 }
-
 //Number Functionality
 //On enter event
 function numberEnter() {
