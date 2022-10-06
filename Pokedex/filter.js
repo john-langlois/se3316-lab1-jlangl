@@ -134,15 +134,7 @@ numberInput.addEventListener("keyup",numberEnter);
 //Letter functionality
 //On enter event
 function nameEnter() {
-pokemonSearch = []
-    let child = searchResult.lastElementChild;
-  while (child) {
-    searchResult.removeChild(child);
-    child = searchResult.lastElementChild;
-  }
-    if(!nameInput.value == ""){
         nameFilter(nameInput.value);
-    }
 }
 //filter through pokemon info, if found, return boolean
 nameFilter = (input) =>{
